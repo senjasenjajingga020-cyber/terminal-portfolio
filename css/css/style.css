@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #0d1117;
+    color: #e6edf3;
+
+    font-family: "Courier New", monospace;
+}
+
+.terminal {
+    width: min(900px, 94vw);
+    height: min(600px, 85vh);
+
+    background: #0d1117;
+
+    border: 1px solid #30363d;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    padding: 0 15px;
+
+    background: #161b22;
+    border-bottom: 1px solid #30363d;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.buttons span {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+    background: #555;
+}
+
+.close {
+    background: #ff5f56 !important;
+}
+
+.minimize {
+    background: #ffbd2e !important;
+}
+
+.maximize {
+    background: #27c93f !important;
+}
+
+.title {
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.terminal-output {
+    height: calc(100% - 82px);
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    line-height: 1.6;
+}
+
+.command {
+    color: #58a6ff;
+}
+
+.prompt {
+    color: #3fb950;
+    white-space: nowrap;
+}
+
+.terminal-input {
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px 20px;
+
+    gap: 10px;
+}
+
+#command-input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #e6edf3;
+
+    font: inherit;
+    font-size: 16px;
+}
+
+.output-command {
+    color: #8b949e;
+}
+
+.output-title {
+    color: #58a6ff;
+    font-weight: bold;
+}
+
+a {
+    color: #58a6ff;
+}
+
+@media (max-width: 600px) {
+    .terminal {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .terminal-output {
+        padding: 15px;
+    }
+
+    .terminal-input {
+        padding: 0 15px 15px;
+    }
+}

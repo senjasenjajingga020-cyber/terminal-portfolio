@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfa | Terminal Portfolio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="terminal">
+
+        <header class="terminal-header">
+            <div class="buttons">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+            </div>
+
+            <span class="title">alfa@portfolio: ~</span>
+        </header>
+
+        <section id="terminal-output" class="terminal-output">
+            <p>Welcome to <strong>Alfa's Terminal Portfolio</strong>!</p>
+            <p>Ketik <span class="command">help</span> untuk melihat command.</p>
+        </section>
+
+        <form id="terminal-form" class="terminal-input">
+            <span class="prompt">alfa@portfolio:~$</span>
+
+            <input
+                id="command-input"
+                type="text"
+                autocomplete="off"
+                autofocus
+            >
+        </form>
+
+    </main>
+
+    <script src="js/terminal.js"></script>
+
+</body>
+</html>

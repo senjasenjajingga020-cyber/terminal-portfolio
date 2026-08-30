@@ -17,7 +17,7 @@ const commands = {
     about() {
         return `
             <p><strong>About Me</strong></p>
-            <p>Hi! I'm Alfa, a developer who enjoys building things and learning new technologies.</p>
+            <p>Hi! I'm theodore, a developer who enjoys building things and learning new technologies.</p>
         `;
     },
 
@@ -57,7 +57,7 @@ form.addEventListener("submit", (event) => {
 
     output.innerHTML += `
         <p class="output-command">
-            alfa@portfolio:~$ ${command}
+            theodore@portfolio:~$ ${command}
         </p>
     `;
 

@@ -46,9 +46,38 @@ const commands = {
     about() {
         return `
             <p><strong>About Theodore</strong></p>
+
             <p>
-                Hi! I'm Theodore, a developer who enjoys
-                building things and learning new technologies.
+                Hello! I'm Theodore, a developer who enjoys
+                exploring technology, building projects,
+                and learning new things.
+            </p>
+
+            <p>
+                I'm interested in web development, JavaScript,
+                Linux, programming, and experimenting with
+                different technologies.
+            </p>
+
+            <p>
+                I enjoy turning ideas into real projects and
+                improving my skills through hands-on experience.
+            </p>
+
+            <p>
+                This terminal portfolio is a personal project
+                created to showcase my work, skills, and
+                experiments in a different way.
+            </p>
+
+            <p>
+                <strong>Currently learning:</strong><br>
+                JavaScript • Web Development • Linux • Git
+            </p>
+
+            <p>
+                Type <span class="command">projects</span>
+                to see my projects.
             </p>
         `;
     },
@@ -73,6 +102,7 @@ const commands = {
     skills() {
         return `
             <p><strong>Skills</strong></p>
+
             <p>
                 HTML<br>
                 CSS<br>
@@ -86,19 +116,64 @@ const commands = {
     socials() {
         return `
             <p><strong>Socials</strong></p>
+
             <p>
-                GitHub:
-                <a href="https://github.com/" target="_blank">
-                    GitHub
+                <strong>GitHub</strong><br>
+                <a href="https://github.com/senjasenjajingga020-cyber"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    github.com/senjasenjajingga020-cyber
                 </a>
+            </p>
+
+            <p>
+                <strong>Instagram</strong><br>
+                Coming soon...
+            </p>
+
+            <p>
+                <strong>Discord</strong><br>
+                Coming soon...
+            </p>
+
+            <p>
+                More social links will be added soon.
             </p>
         `;
     },
 
     contact() {
         return `
-            <p><strong>Contact</strong></p>
-            <p>Email: your-email@example.com</p>
+            <p><strong>Contact Theodore</strong></p>
+
+            <p>
+                Have a question, project idea, or just want
+                to say hello?
+            </p>
+
+            <p>
+                You can find me through GitHub or my other
+                social platforms.
+            </p>
+
+            <p>
+                <strong>GitHub:</strong><br>
+                <a href="https://github.com/senjasenjajingga020-cyber"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    github.com/senjasenjajingga020-cyber
+                </a>
+            </p>
+
+            <p>
+                <strong>Email:</strong><br>
+                Coming soon...
+            </p>
+
+            <p>
+                I'm open to interesting projects,
+                collaboration, and learning opportunities.
+            </p>
         `;
     },
 

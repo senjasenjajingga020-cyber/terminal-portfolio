@@ -3,6 +3,22 @@ const input = document.getElementById("command-input");
 const output = document.getElementById("terminal-output");
 
 const commands = {
+
+    neofetch() {
+        return `
+            <pre class="neofetch">
+       ████████        theodore@portfolio
+     ██        ██      ───────────────────
+    ██   ████   ██     OS: PortfolioOS
+    ██   █  █   ██     Host: GitHub Pages
+    ██   ████   ██     Shell: Web Terminal
+     ██        ██      Role: Developer
+       ████████        Languages: HTML CSS JS
+                       Status: Online
+            </pre>
+        `;
+    },
+
     help() {
         return `
             <p><strong>Available commands:</strong></p>
@@ -10,6 +26,7 @@ const commands = {
             <p>projects - My projects</p>
             <p>skills - My skills</p>
             <p>contact - Contact</p>
+            <p>neofetch - System information</p>
             <p>clear - Clear terminal</p>
         `;
     },
@@ -17,7 +34,7 @@ const commands = {
     about() {
         return `
             <p><strong>About Me</strong></p>
-            <p>Hi! I'm theodore, a developer who enjoys building things and learning new technologies.</p>
+            <p>Hi! I'm Theodore, a developer who enjoys building things and learning new technologies.</p>
         `;
     },
 

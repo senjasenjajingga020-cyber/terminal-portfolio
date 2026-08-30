@@ -109,14 +109,15 @@ const commands = {
 };
 
 
-// ================================
-// COMMAND HISTORY
-// ================================
+/* ========================================
+   COMMAND HISTORY
+======================================== */
 
 let history = [];
 let historyIndex = -1;
 
 form.addEventListener("submit", (event) => {
+
     event.preventDefault();
 
     const command = input.value.trim().toLowerCase();
@@ -133,28 +134,31 @@ form.addEventListener("submit", (event) => {
     `;
 
     if (commands[command]) {
+
         output.innerHTML += commands[command]();
+
     } else {
+
         output.innerHTML += `
-            <p>
-                Command not found: ${command}
-            </p>
+            <p>Command not found: ${command}</p>
 
             <p>
-                Type <span class="command">help</span>
+                Type
+                <span class="command">help</span>
                 for available commands.
             </p>
         `;
     }
 
     input.value = "";
+
     output.scrollTop = output.scrollHeight;
 });
 
 
-// ================================
-// ARROW UP / DOWN
-// ================================
+/* ========================================
+   ARROW UP / DOWN
+======================================== */
 
 input.addEventListener("keydown", (event) => {
 
@@ -179,19 +183,24 @@ input.addEventListener("keydown", (event) => {
         if (history.length === 0) return;
 
         if (historyIndex < history.length - 1) {
+
             historyIndex++;
+
             input.value = history[historyIndex];
+
         } else {
+
             historyIndex = history.length;
+
             input.value = "";
         }
     }
 });
 
 
-// ================================
-// TAB AUTOCOMPLETE
-// ================================
+/* ========================================
+   TAB AUTOCOMPLETE
+======================================== */
 
 input.addEventListener("keydown", (event) => {
 
@@ -211,8 +220,64 @@ input.addEventListener("keydown", (event) => {
 });
 
 
-// Keep terminal focused
+/* ========================================
+   BOOT ANIMATION
+======================================== */
+
+const bootScreen = document.getElementById("boot-screen");
+const bootText = document.getElementById("boot-text");
+
+const bootMessages = [
+    "[ SYSTEM BOOT ]",
+    "",
+    "Initializing Theodore Portfolio...",
+    "Loading terminal modules...",
+    "Loading projects...",
+    "Loading skills...",
+    "Connecting to portfolio...",
+    "",
+    "ACCESS GRANTED",
+    "",
+    "Welcome, visitor."
+];
+
+let bootIndex = 0;
+
+function boot() {
+
+    if (bootIndex < bootMessages.length) {
+
+        bootText.textContent +=
+            bootMessages[bootIndex] + "\n";
+
+        bootIndex++;
+
+        setTimeout(boot, 180);
+
+    } else {
+
+        setTimeout(() => {
+
+            bootScreen.classList.add("hidden");
+
+            setTimeout(() => {
+                bootScreen.remove();
+            }, 600);
+
+        }, 700);
+    }
+}
+
+
+/* ========================================
+   KEEP TERMINAL FOCUSED
+======================================== */
 
 document.addEventListener("click", () => {
     input.focus();
 });
+
+
+/* START BOOT */
+
+boot();

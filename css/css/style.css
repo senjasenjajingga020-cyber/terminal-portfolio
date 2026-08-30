@@ -10,38 +10,40 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: #0d1117;
-    color: #e6edf3;
+    background: #05070a;
+    color: #d7dde5;
 
     font-family: "Courier New", monospace;
 }
 
 .terminal {
-    width: min(900px, 94vw);
-    height: min(600px, 85vh);
+    width: min(950px, 94vw);
+    height: min(620px, 86vh);
 
-    background: #0d1117;
+    background: #0b0f14;
 
-    border: 1px solid #30363d;
-    border-radius: 10px;
+    border: 1px solid #26313d;
+    border-radius: 12px;
 
     overflow: hidden;
 
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow:
+        0 0 40px rgba(0, 0, 0, 0.7),
+        0 0 100px rgba(0, 0, 0, 0.4);
 }
 
 .terminal-header {
-    height: 42px;
+    height: 45px;
 
     display: flex;
     align-items: center;
 
     position: relative;
 
-    padding: 0 15px;
+    padding: 0 16px;
 
-    background: #161b22;
-    border-bottom: 1px solid #30363d;
+    background: #11161d;
+    border-bottom: 1px solid #26313d;
 }
 
 .buttons {
@@ -54,19 +56,20 @@ body {
     height: 12px;
 
     border-radius: 50%;
-    background: #555;
+
+    display: block;
 }
 
 .close {
-    background: #ff5f56 !important;
+    background: #ff5f56;
 }
 
 .minimize {
-    background: #ffbd2e !important;
+    background: #ffbd2e;
 }
 
 .maximize {
-    background: #27c93f !important;
+    background: #27c93f;
 }
 
 .title {
@@ -75,18 +78,25 @@ body {
     left: 50%;
     transform: translateX(-50%);
 
-    color: #8b949e;
-    font-size: 14px;
+    color: #7d8793;
+
+    font-size: 13px;
 }
 
 .terminal-output {
-    height: calc(100% - 82px);
+    height: calc(100% - 85px);
 
-    padding: 20px;
+    padding: 22px;
 
     overflow-y: auto;
 
-    line-height: 1.6;
+    line-height: 1.7;
+
+    scrollbar-width: thin;
+}
+
+.terminal-output p {
+    margin: 5px 0;
 }
 
 .command {
@@ -95,20 +105,25 @@ body {
 
 .prompt {
     color: #3fb950;
+
     white-space: nowrap;
+
+    font-weight: bold;
 }
 
 .terminal-input {
     display: flex;
     align-items: center;
 
-    padding: 0 20px 20px;
-
     gap: 10px;
+
+    padding: 0 22px 20px;
 }
 
 #command-input {
     flex: 1;
+
+    min-width: 0;
 
     border: none;
     outline: none;
@@ -117,8 +132,12 @@ body {
 
     color: #e6edf3;
 
-    font: inherit;
+    font-family: inherit;
     font-size: 16px;
+}
+
+#command-input::selection {
+    background: #264f78;
 }
 
 .output-command {
@@ -127,25 +146,41 @@ body {
 
 .output-title {
     color: #58a6ff;
+
     font-weight: bold;
 }
 
 a {
     color: #58a6ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 600px) {
+    body {
+        align-items: stretch;
+    }
+
     .terminal {
-        width: 100vw;
+        width: 100%;
         height: 100vh;
+
+        border: none;
         border-radius: 0;
     }
 
     .terminal-output {
-        padding: 15px;
+        padding: 16px;
     }
 
     .terminal-input {
-        padding: 0 15px 15px;
+        padding: 0 16px 16px;
+    }
+
+    .title {
+        font-size: 12px;
     }
 }

@@ -78,10 +78,3 @@ This portfolio is still being developed and improved.
 **Theodore**
 
 Developer interested in building things, learning new technologies, Linux, and web development.
-
----
-
-Made with HTML, CSS & JavaScript.
-
-```
-

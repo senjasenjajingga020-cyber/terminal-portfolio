@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Theodore | Terminal Portfolio</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -10,35 +11,74 @@
 
 <body>
 
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen">
+        <div id="boot-text"></div>
+    </div>
+
+    <!-- TERMINAL -->
     <main class="terminal">
 
+        <!-- HEADER -->
         <header class="terminal-header">
-            <div class="buttons">
+
+            <div class="window-buttons">
                 <span class="close"></span>
                 <span class="minimize"></span>
                 <span class="maximize"></span>
             </div>
 
-            <span class="title">theodore@portfolio: ~</span>
+            <div class="terminal-title">
+                theodore@portfolio: ~
+            </div>
+
         </header>
 
-        <section id="terminal-output" class="terminal-output">
-            Welcome to <strong>Theodore's Terminal Portfolio</strong>!
-            <p>Ketik <span class="command">help</span> untuk melihat command.</p>
+
+        <!-- TERMINAL CONTENT -->
+        <section
+            id="terminal-output"
+            class="terminal-output"
+        >
+
+            <div class="welcome">
+                <p>
+                    Welcome to
+                    <strong>Theodore's Terminal Portfolio</strong>
+                </p>
+
+                <p>
+                    Type
+                    <span class="command">help</span>
+                    to see available commands.
+                </p>
+            </div>
+
         </section>
 
-        <form id="terminal-form" class="terminal-input">
-            <span class="prompt">theodore@portfolio:~$</span>
+
+        <!-- INPUT -->
+        <form
+            id="terminal-form"
+            class="terminal-input"
+        >
+
+            <span class="prompt">
+                theodore@portfolio:~$
+            </span>
 
             <input
                 id="command-input"
                 type="text"
                 autocomplete="off"
+                spellcheck="false"
                 autofocus
             >
+
         </form>
 
     </main>
+
 
     <script src="js/terminal.js"></script>
 

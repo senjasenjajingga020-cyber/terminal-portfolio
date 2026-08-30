@@ -2,23 +2,48 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     margin: 0;
-    min-height: 100vh;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    background: #05070a;
+    background:
+        radial-gradient(
+            circle at center,
+            #101820 0%,
+            #070a0e 45%,
+            #030507 100%
+        );
+
     color: #d7dde5;
 
-    font-family: "Courier New", monospace;
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    overflow: hidden;
 }
+
+
+/* ========================================
+   TERMINAL
+======================================== */
 
 .terminal {
     width: min(950px, 94vw);
     height: min(620px, 86vh);
+
+    display: flex;
+    flex-direction: column;
 
     background: #0b0f14;
 
@@ -28,36 +53,49 @@ body {
     overflow: hidden;
 
     box-shadow:
-        0 0 40px rgba(0, 0, 0, 0.7),
-        0 0 100px rgba(0, 0, 0, 0.4);
+        0 20px 80px rgba(0, 0, 0, 0.65),
+        0 0 40px rgba(0, 0, 0, 0.4);
 }
 
+
+/* ========================================
+   HEADER
+======================================== */
+
 .terminal-header {
-    height: 45px;
+    position: relative;
+
+    height: 46px;
+    min-height: 46px;
 
     display: flex;
     align-items: center;
 
-    position: relative;
-
     padding: 0 16px;
 
     background: #11161d;
+
     border-bottom: 1px solid #26313d;
 }
 
-.buttons {
+
+/* Window buttons */
+
+.window-buttons {
     display: flex;
+
+    align-items: center;
+
     gap: 8px;
 }
 
-.buttons span {
+.window-buttons span {
     width: 12px;
     height: 12px;
 
-    border-radius: 50%;
-
     display: block;
+
+    border-radius: 50%;
 }
 
 .close {
@@ -72,52 +110,138 @@ body {
     background: #27c93f;
 }
 
-.title {
+
+/* Terminal title */
+
+.terminal-title {
     position: absolute;
 
     left: 50%;
+
     transform: translateX(-50%);
 
     color: #7d8793;
 
     font-size: 13px;
+
+    white-space: nowrap;
 }
 
-.terminal-output {
-    height: calc(100% - 85px);
 
-    padding: 22px;
+/* ========================================
+   OUTPUT
+======================================== */
+
+.terminal-output {
+    flex: 1;
+
+    padding: 24px;
 
     overflow-y: auto;
 
     line-height: 1.7;
 
-    scrollbar-width: thin;
+    font-size: 15px;
+
+    scroll-behavior: smooth;
 }
 
+
+/* Scrollbar */
+
+.terminal-output::-webkit-scrollbar {
+    width: 7px;
+}
+
+.terminal-output::-webkit-scrollbar-track {
+    background: #080b0f;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+    background: #26313d;
+
+    border-radius: 10px;
+}
+
+
+/* Paragraph */
+
 .terminal-output p {
-    margin: 5px 0;
+    margin: 6px 0;
+}
+
+
+/* ========================================
+   TEXT
+======================================== */
+
+.welcome {
+    margin-bottom: 20px;
+}
+
+.welcome strong {
+    color: #58a6ff;
 }
 
 .command {
     color: #58a6ff;
+
+    font-weight: bold;
+}
+
+.output-command {
+    color: #8b949e;
+
+    margin-top: 14px !important;
 }
 
 .prompt {
     color: #3fb950;
 
-    white-space: nowrap;
-
     font-weight: bold;
+
+    white-space: nowrap;
 }
 
+.neofetch {
+    color: #58a6ff;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    line-height: 1.4;
+}
+
+
+/* Links */
+
+a {
+    color: #58a6ff;
+
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   INPUT
+======================================== */
+
 .terminal-input {
+    min-height: 55px;
+
     display: flex;
+
     align-items: center;
 
     gap: 10px;
 
-    padding: 0 22px 20px;
+    padding: 0 24px 16px;
 }
 
 #command-input {
@@ -132,34 +256,81 @@ body {
 
     color: #e6edf3;
 
-    font-family: inherit;
-    font-size: 16px;
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 15px;
 }
 
 #command-input::selection {
     background: #264f78;
 }
 
-.output-command {
-    color: #8b949e;
+
+/* ========================================
+   BOOT SCREEN
+======================================== */
+
+#boot-screen {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: #030507;
+
+    color: #3fb950;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 15px;
 }
 
-.output-title {
-    color: #58a6ff;
+#boot-text {
+    width: min(700px, 90vw);
 
-    font-weight: bold;
+    line-height: 1.8;
+
+    white-space: pre-line;
 }
 
-a {
-    color: #58a6ff;
-    text-decoration: none;
+#boot-screen.hidden {
+    animation: bootFade 0.6s ease forwards;
 }
 
-a:hover {
-    text-decoration: underline;
+@keyframes bootFade {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+
+        visibility: hidden;
+    }
 }
+
+
+/* ========================================
+   MOBILE
+======================================== */
 
 @media (max-width: 600px) {
+
     body {
         align-items: stretch;
     }
@@ -169,18 +340,34 @@ a:hover {
         height: 100vh;
 
         border: none;
+
         border-radius: 0;
+    }
+
+    .terminal-header {
+        height: 44px;
+        min-height: 44px;
     }
 
     .terminal-output {
         padding: 16px;
+
+        font-size: 14px;
     }
 
     .terminal-input {
         padding: 0 16px 16px;
     }
 
-    .title {
-        font-size: 12px;
+    #command-input {
+        font-size: 14px;
+    }
+
+    .terminal-title {
+        font-size: 11px;
+    }
+
+    #boot-screen {
+        font-size: 13px;
     }
 }

@@ -27,3 +27,61 @@ socials
 contact
 neofetch
 clear
+````
+
+## 🛠️ Technologies
+
+* HTML
+* CSS
+* JavaScript
+* Git & GitHub
+* GitHub Pages
+
+## 📁 Project Structure
+
+```text
+terminal-portfolio/
+├── .github/
+├── css/
+│   └── style.css
+├── js/
+│   └── terminal.js
+├── index.html
+├── LICENSE
+└── README.md
+```
+
+## 🚀 Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/senjasenjajingga020-cyber/terminal-portfolio.git
+```
+
+Open the project folder:
+
+```bash
+cd terminal-portfolio
+```
+
+Then open `index.html` in your browser.
+
+## 📌 Project Status
+
+🟢 Online
+
+This portfolio is still being developed and improved.
+
+## 👤 Author
+
+**Theodore**
+
+Developer interested in building things, learning new technologies, Linux, and web development.
+
+---
+
+Made with HTML, CSS & JavaScript.
+
+```
+

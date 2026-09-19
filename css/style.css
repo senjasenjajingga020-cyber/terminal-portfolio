@@ -16,14 +16,12 @@ body {
     justify-content: center;
 
     background:
-        radial-gradient(
-            circle at center,
-            #101820 0%,
-            #070a0e 45%,
-            #030507 100%
+        linear-gradient(
+            rgba(3, 5, 7, 0.65),
+            rgba(3, 5, 7, 0.65)
         ),
-        rl("/KIMI NI TODOKE _FROM ME TO YOU SEASON 3.jpg")
-    center / cover no-repeat fixed;
+        url("../KIMI NI TODOKE _FROM ME TO YOU SEASON 3.jpg")
+        center / cover no-repeat fixed;
 
     color: #d7dde5;
 
@@ -47,7 +45,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    background: #0b0f14;
+    background: rgba(11, 15, 20, 0.92);
 
     border: 1px solid #26313d;
     border-radius: 12px;
@@ -75,7 +73,7 @@ body {
 
     padding: 0 16px;
 
-    background: #11161d;
+    background: rgba(17, 22, 29, 0.95);
 
     border-bottom: 1px solid #26313d;
 }

@@ -20,7 +20,7 @@ body {
         rgba(3, 5, 7, 0.65),
         rgba(3, 5, 7, 0.65)
     ),
-    url("../anime.jpg");
+    url("/terminal-portfolio/anime.jpg");
 
 background-size: cover;
 background-position: center;

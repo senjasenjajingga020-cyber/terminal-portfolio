@@ -16,16 +16,16 @@ body {
     justify-content: center;
 
     background:
-        linear-gradient(
-            rgba(3, 5, 7, 0.65),
-            rgba(3, 5, 7, 0.65)
-        ),
-        url("../anime.jpg");
+    linear-gradient(
+        rgba(3, 5, 7, 0.65),
+        rgba(3, 5, 7, 0.65)
+    ),
+    url("../anime.jpg");
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
 
     color: #d7dde5;
 

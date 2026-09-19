@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
@@ -10,59 +11,92 @@
 
     <title>Theodore | Terminal Portfolio</title>
 
-    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Background override -->
     <style>
+        /* ========================================
+           PAGE
+        ======================================== */
+
         body {
             position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+
             background: #05070a;
         }
 
-        /* Anime background */
+
+        /* ========================================
+           ANIME BACKGROUND
+        ======================================== */
+
         .anime-background {
-    position: fixed;
-    inset: 0;
+            position: fixed;
+            inset: 0;
 
-    width: 50%;
-    height: 50%;
+            width: 100vw;
+            height: 100vh;
 
-    object-fit: cover;
-    object-position: center 50%;
+            object-fit: fill;
+            object-position: center;
 
-    z-index: 0;
+            z-index: 0;
 
-    filter: brightness(0.65);
-}
-        /* Dark overlay */
+            filter: brightness(0.65);
+        }
+
+
+        /* ========================================
+           DARK OVERLAY
+        ======================================== */
+
         .anime-overlay {
             position: fixed;
             inset: 0;
 
-            background: rgba(0, 0, 0, 0.25);
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.20);
 
             z-index: 1;
+
+            pointer-events: none;
         }
 
-        /* Put terminal above background */
+
+        /* ========================================
+           TERMINAL
+        ======================================== */
+
         .terminal {
             position: relative;
+
             z-index: 2;
         }
 
-        /* Boot above everything */
+
+        /* ========================================
+           BOOT SCREEN
+        ======================================== */
+
         #boot-screen {
+            position: fixed;
+
+            inset: 0;
+
             z-index: 9999;
         }
     </style>
 </head>
 
+
 <body>
 
     <!-- ========================================
          ANIME BACKGROUND
-    ========================================= -->
+    ======================================== -->
 
     <img
         src="anime.jpg"
@@ -75,7 +109,7 @@
 
     <!-- ========================================
          BOOT SCREEN
-    ========================================= -->
+    ======================================== -->
 
     <div id="boot-screen">
 
@@ -89,7 +123,6 @@
     ======================================== -->
 
     <main class="terminal">
-
 
         <!-- HEADER -->
 
@@ -107,17 +140,13 @@
 
 
             <div class="terminal-title">
-
                 theodore@portfolio: ~
-
             </div>
 
         </header>
 
 
-        <!-- ========================================
-             TERMINAL OUTPUT
-        ========================================= -->
+        <!-- TERMINAL OUTPUT -->
 
         <section
             id="terminal-output"
@@ -146,9 +175,7 @@
         </section>
 
 
-        <!-- ========================================
-             TERMINAL INPUT
-        ========================================= -->
+        <!-- TERMINAL INPUT -->
 
         <form
             id="terminal-form"
@@ -172,9 +199,7 @@
     </main>
 
 
-    <!-- ========================================
-         JAVASCRIPT
-    ========================================= -->
+    <!-- JAVASCRIPT -->
 
     <script src="js/terminal.js"></script>
 
